@@ -7,7 +7,8 @@ import java.util.concurrent.TimeUnit;
 
 /**
  *
- * java NIO 中的pipe是2个线程之间的单向数据连接。Pipe有一个source通道和一个sink通道。数据会被写到sink通道，从source通道读取。
+ * java NIO 中的{@link Pipe}是2个线程之间的单向数据连接。
+ * {@link Pipe}有一个source通道和一个sink通道。数据会被写到sink通道，从source通道读取。
  * Created by zhaoshq on 2017/7/28.
  */
 public class PipeTest {
