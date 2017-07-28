@@ -40,13 +40,9 @@ public class FileChannelTest {
     }
 
     /**
-     * 使用Buffer一般遵循下面几个步骤：
-     * 1、分配空间（ByteBuffer buf = ByteBuffer.allocate(1024)；还有通过文件映射{@link FileChannel#map(FileChannel.MapMode, long, long)}来分配）
-     * 2、写入数据到Buffer（int bytesRead = fileChannel.read(buf)）
-     * 3、调用{@link Buffer#flip()}方法(将缓冲区从写模式转为读模式)
-     * 4、从Buffer中读取数据（System.out.println((char)buf.get());）
-     * 5、调用{@link Buffer#clear()}方法或者{@link ByteBuffer#compact()}方法（将缓冲区从读模式转为写模式）
-     * 6、重复2-5，直到bytesRead != -1
+     * FileChannel的获取有两种方式：
+     * 1、通过{@link RandomAccessFile#getChannel()}
+     * 2、通过{@link FileInputStream#getChannel()} or {@link FileOutputStream#getChannel()}
      *
      * Buffer中几个方法说明：
      * {@link ByteBuffer #filp()}：position设回0，并将limit设成之前的position的值
