@@ -59,7 +59,7 @@ public class FileChannelTest {
         RandomAccessFile aFile = null;
         try {
             aFile = new RandomAccessFile(filePath,"rw");
-            FileChannel fileChannel = aFile.getChannel();
+            FileChannel fileChannel = aFile.getChannel();   //这里也可以通过FileInputStream.getChannel()来获取FileChannel
             //分配空间
             ByteBuffer buf = ByteBuffer.allocate(1024);
             //写数据
